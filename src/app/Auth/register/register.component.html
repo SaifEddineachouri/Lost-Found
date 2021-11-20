@@ -1,0 +1,115 @@
+<body>
+  <div class="container-fluid">
+    <!-- Form login -->
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-12 col-md-9">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <div class="row">
+              <!-- cover -->
+              <div class="col-lg-7 d-none d-lg-block position-relative">
+                <img src="../../../assets/n1572900.png" class="cover" />
+              </div>
+
+              <!-- form control -->
+              <div class="col-lg-5">
+                <div class="p-3">
+                  <div class="text-center mt-5">
+                    <h1 class="h2 judul text-bold">Create Account</h1>
+                  </div>
+                  <form method="POST" name="myForm" action="#">
+                    <div class="card mt-4 rounded-pill">
+                      <div class="card-body p-0">
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            class="form-control form-login"
+                            placeholder="Username"
+                            name="user"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mt-4 rounded-pill">
+                      <div class="card-body p-0">
+                        <div class="input-group">
+                          <input
+                            type="email"
+                            class="form-control form-login"
+                            placeholder="Email"
+                            name="email"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mt-4 rounded-pill">
+                      <div class="card-body p-0">
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            class="form-control form-login"
+                            placeholder="Country"
+                            name="country"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mt-4 rounded-pill">
+                      <div class="card-body p-0">
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            class="form-control form-login"
+                            placeholder="Phone"
+                            name="phone"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mt-4 rounded-pill">
+                      <div class="card-body p-0">
+                        <div class="input-group">
+                          <input
+                            type="password"
+                            class="form-control form-login"
+                            placeholder="Password"
+                            name="pass"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group mt-4 mb-4">
+                      <label class="container font-check"
+                        >Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit, sed diam nonummy nibh euismod tincidunt ut
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+
+                    <button
+                      type="submit"
+                      class="btn btn-purple block rounded-pill shadow"
+                    >
+                      <i class="fas fa-lock"></i> CREATE ACCOUNT
+                    </button>
+
+                    <div class="mt-4 mb-3">
+                      <a routerLink="/Login" class="link">Have Account?</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

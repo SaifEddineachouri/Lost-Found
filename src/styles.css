@@ -1,1 +1,117 @@
+.bg-custom{
+  background-color: #fff !important;
+  transition: 0.3s;
+  border: 1px solid #8153F0;
+  color: #8153F0 !important;
+}
+
+.bg-custom:hover {
+  background-color:#8153F0 !important;
+  border: 1px solid rgba(0, 0, 0, 0);
+  color: #fff !important;
+}
+
+.bg-active{
+  background-color: #fff !important;
+  transition: 0.3s;
+  border: 0px;
+  color: #8153F0 !important;
+}
+
+.navbar{
+    width: 100%;
+}
+
+
+  
+.desc{
+  max-width: 400px;
+}
+
+.tebel-banget {
+font-weight: 900;
+}
+
+.tebel-sedang {
+font-weight: bold;
+}
+
+.button {
+  background-image: linear-gradient(to right, #594AD9 0%, #8153F0 51%);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-image: linear-gradient(to right, #4d41bb 0%, #6c45c5 51%);
+  color: white;
+}
+
+
+.gambar{
+display: none;
+}
+
+.img{
+width: 500px;
+z-index: -1;
+}
+
+.link{
+color: white;
+transition: 0.3s;
+}
+
+.display-1{
+  font-size: 50px;
+}
+
+.link:hover{
+color: #8153F0;
+}
+
 /* You can add global styles to this file, and also import other style files */
+@media screen and (max-width: 600px) {
+    .img{
+      display: none;
+      width: 500px;
+    }
+  
+    .gambar{
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 800px) {
+    .img{
+      display: none;
+      width: 500px;
+    }
+  
+    .gambar{
+      display: block;
+    }
+  
+  }
+  
+  @media screen and (max-width: 1199px) {
+    .img{
+      width: 500px;
+      z-index: -1;
+    }
+  
+  }
+  
+  @media screen and (max-width: 992px) {
+    .img{
+      width: 300px;
+      z-index: -1;
+    }
+  
+  }
+
