@@ -18,30 +18,35 @@
                     <h1 class="h1 judul text-bold">LOGIN</h1>
                     <p class="desc">Welcome to Lost&Found</p>
                   </div>
-                  <form method="POST" name="myForm" action="#">
+                  <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
                     <div class="card mt-4 rounded-pill">
                       <div class="card-body p-0">
                         <div class="input-group">
+                          <span
+                              class="error"
+                              *ngIf="!LoginForm.get('Email')?.valid && LoginForm.get('Email')?.touched" 
+                              class="help-block">Please Enter a Valid Email !</span>
                           <input
                             type="text"
+                            formControlName ="Email"
                             class="form-control form-login"
                             placeholder="Email"
-                            name="user"
-                            required
-                          />
+                            name="email"/>
                         </div>
                       </div>
                     </div>
                     <div class="card mt-4 rounded-pill">
                       <div class="card-body p-0">
                         <div class="input-group">
+                          <span class="error"
+                            *ngIf="!LoginForm.get('Password')?.valid && LoginForm.get('Password')?.touched"  
+                            class="help-block">Please Enter a Valid Password !</span>
                           <input
                             type="password"
+                            formControlName="Password"
                             class="form-control form-login"
                             placeholder="Password"
-                            name="pass"
-                            required
-                          />
+                            name="password"/>
                         </div>
                       </div>
                     </div>
@@ -50,7 +55,9 @@
                       <div class="form-group">
                         <label class="container font-check"
                           >Remember
-                          <input type="checkbox" />
+                          <input type="checkbox" 
+                                 formControlName="Remember"
+                          />
                           <span class="checkmark"></span>
                         </label>
                       </div>
@@ -60,12 +67,13 @@
                     <button
                       type="submit"
                       class="btn btn-purple block rounded-pill shadow"
+                      [disabled]="!LoginForm.valid"
                     >
                       <i class="fas fa-lock"></i> LOGIN
                     </button>
 
                     <div class="mt-4">
-                      <a routerLink="/Regsiter" class="link">Create Account?</a>
+                      <a routerLink="/Register" class="link">Create Account?</a>
                     </div>
                   </form>
                 </div>

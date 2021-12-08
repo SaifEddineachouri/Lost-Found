@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DPIComponent } from './dpi.component';
+import { ShowAnnounceComponent } from './show-announce.component';
 
-describe('DPIComponent', () => {
-  let component: DPIComponent;
-  let fixture: ComponentFixture<DPIComponent>;
+describe('ShowAnnounceComponent', () => {
+  let component: ShowAnnounceComponent;
+  let fixture: ComponentFixture<ShowAnnounceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DPIComponent ]
+      declarations: [ ShowAnnounceComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DPIComponent);
+    fixture = TestBed.createComponent(ShowAnnounceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

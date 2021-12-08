@@ -18,9 +18,12 @@
   color: #8153F0 !important;
 }
 
-.navbar{
-    width: 100%;
-}
+/* .navbar{
+      width: 100%;
+      overflow: hidden;
+      position: fixed;
+      padding-top : 0px ;  
+} */
 
 
   

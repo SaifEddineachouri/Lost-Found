@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
 .cover{
     border-radius: 4px 0px 0px 4px;
     padding-top: 150px;
@@ -5,9 +7,13 @@
     margin-left: 80px;
 }
 
+.input-group{
+  display:initial;
+}
 
 .judul{
     color: #71208b;
+    font-family: 'Poppins', sans-serif;
 }
 
 .desc{
@@ -164,7 +170,7 @@
   }
   
   ::placeholder { 
-    color: #d2d3d5;
+    color: #aeb1b9;
     opacity: 1;
   }
   
@@ -176,4 +182,12 @@
       color: #d2d3d5;
   }
   
-  
+  /* Validation  Form */
+  input.ng-invalid.ng-touched{
+    border: 1px solid rgba(230, 68, 90, 0.87);
+  }
+
+  .help-block{
+    color: rgba(230, 68, 90, 0.87);
+    font-family: 'Poppins', sans-serif;
+  }

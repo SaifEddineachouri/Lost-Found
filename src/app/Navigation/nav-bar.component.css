@@ -1,0 +1,25 @@
+.navbar{
+    background-color: transparent;
+    position: fixed;
+}
+
+
+.fixed{
+    position : fixed;
+    width : 100% ;
+    transition: 0.6s ease;
+    top : 0px ;
+    background-color: rgb(172, 172, 172);
+}
+
+.nofixed{
+    background-color: transparent;
+    position: static;
+    transition: 1s ease;
+    top: -50px;
+
+}
+
+.mt-4{
+    margin-top: 0;
+}

@@ -17,16 +17,25 @@
                   <div class="text-center mt-5">
                     <h1 class="h2 judul text-bold">Create Account</h1>
                   </div>
-                  <form method="POST" name="myForm" action="#">
+                  <form [formGroup]="RegisterForm" (ngSubmit)="onSubmit()">
                     <div class="card mt-4 rounded-pill">
                       <div class="card-body p-0">
                         <div class="input-group">
+                          <span
+                            class="error"
+                            *ngIf="
+                              !RegisterForm.get('Firstname')?.valid &&
+                              RegisterForm.get('Firstname')?.touched
+                            "
+                            class="help-block"
+                            >Please Enter a Valid Firstname !</span
+                          >
                           <input
                             type="text"
                             class="form-control form-login"
-                            placeholder="Username"
-                            name="user"
-                            required
+                            placeholder="First name"
+                            name="Firstname"
+                            formControlName="Firstname"
                           />
                         </div>
                       </div>
@@ -34,12 +43,43 @@
                     <div class="card mt-4 rounded-pill">
                       <div class="card-body p-0">
                         <div class="input-group">
+                          <span
+                            class="error"
+                            *ngIf="
+                              !RegisterForm.get('Lastname')?.valid &&
+                              RegisterForm.get('Lastname')?.touched
+                            "
+                            class="help-block"
+                            >Please Enter a Valid Lastname !</span
+                          >
+                          <input
+                            type="text"
+                            class="form-control form-login"
+                            placeholder="Last name"
+                            name="Lastname"
+                            formControlName="Lastname"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mt-4 rounded-pill">
+                      <div class="card-body p-0">
+                        <div class="input-group">
+                          <span
+                            class="error"
+                            *ngIf="
+                              !RegisterForm.get('Email')?.valid &&
+                              RegisterForm.get('Email')?.touched
+                            "
+                            class="help-block"
+                            >Please Enter a Valid Email !</span
+                          >
                           <input
                             type="email"
                             class="form-control form-login"
                             placeholder="Email"
-                            name="email"
-                            required
+                            name="Email"
+                            formControlName="Email"
                           />
                         </div>
                       </div>
@@ -47,47 +87,107 @@
                     <div class="card mt-4 rounded-pill">
                       <div class="card-body p-0">
                         <div class="input-group">
-                          <input
-                            type="text"
-                            class="form-control form-login"
-                            placeholder="Country"
-                            name="country"
-                            required
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card mt-4 rounded-pill">
-                      <div class="card-body p-0">
-                        <div class="input-group">
-                          <input
-                            type="text"
-                            class="form-control form-login"
-                            placeholder="Phone"
-                            name="phone"
-                            required
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card mt-4 rounded-pill">
-                      <div class="card-body p-0">
-                        <div class="input-group">
+                          <span
+                            class="error"
+                            *ngIf="
+                              !RegisterForm.get('Password')?.valid &&
+                              RegisterForm.get('Password')?.touched
+                            "
+                            class="help-block"
+                            >Please Enter a Valid Password !</span
+                          >
                           <input
                             type="password"
                             class="form-control form-login"
                             placeholder="Password"
-                            name="pass"
-                            required
+                            name="Password"
+                            formControlName="Password"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mt-4 rounded-pill">
+                      <div class="card-body p-0">
+                        <div class="input-group">
+                          <span
+                            class="error"
+                            *ngIf="
+                              !RegisterForm.get('Image')?.valid &&
+                              RegisterForm.get('Image')?.touched
+                            "
+                            class="help-block"
+                            >Please Enter a Valid Photo !</span
+                          >
+                          <input
+                            type="file"
+                            class="form-control form-login"
+                            placeholder="Choose a Picture"
+                            name="Image"
+                            formControlName="Image"
+                            (change)="uploadFile($event)"
+                          />
+                        </div>
+                        <br>
+                        <div
+                          class="image-preview mb-3"
+                          *ngIf="preview && preview !== null"
+                        >
+                          <img [src]="preview" height="200px" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mt-4 rounded-pill">
+                      <div class="card-body p-0">
+                        <div class="input-group">
+                          <span
+                            class="error"
+                            *ngIf="
+                              !RegisterForm.get('Phone')?.valid &&
+                              RegisterForm.get('Phone')?.touched
+                            "
+                            class="help-block"
+                            >Please Enter a Valid Phone Number !</span
+                          >
+                          <input
+                            type="number"
+                            class="form-control form-login"
+                            placeholder="Phone"
+                            name="Phone"
+                            formControlName="Phone"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mt-4 rounded-pill">
+                      <div class="card-body p-0">
+                        <div class="input-group">
+                          <span
+                            class="error"
+                            *ngIf="
+                              !RegisterForm.get('City')?.valid &&
+                              RegisterForm.get('City')?.touched
+                            "
+                            class="help-block"
+                            >Please Enter a Valid City Name !</span
+                          >
+                          <input
+                            type="text"
+                            class="form-control form-login"
+                            placeholder="City"
+                            name="City"
+                            formControlName="City"
                           />
                         </div>
                       </div>
                     </div>
 
                     <div class="form-group mt-4 mb-4">
-                      <label class="container font-check"
-                        >Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit, sed diam nonummy nibh euismod tincidunt ut
+                      <label class="container font-check">
+                        By clicking Create Account, you agree to our Terms, Data
+                        Policy and Cookies Policy. You may receive Notifications
+                        from us and can opt out any time.
                         <input type="checkbox" />
                         <span class="checkmark"></span>
                       </label>
@@ -96,6 +196,7 @@
                     <button
                       type="submit"
                       class="btn btn-purple block rounded-pill shadow"
+                      [disabled]="!RegisterForm.valid"
                     >
                       <i class="fas fa-lock"></i> CREATE ACCOUNT
                     </button>
